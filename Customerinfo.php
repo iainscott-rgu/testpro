@@ -7,7 +7,7 @@
 </section>
 <section class="container" id="content2">
 
-    <form action="test.php" method="post">
+    <form action="send.php" method="post">
         <table class="table6">
             <tr><td class="small"><p>* Required Fields</p></td></tr>
             <tr><td>
