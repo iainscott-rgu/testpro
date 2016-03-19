@@ -22,7 +22,7 @@ $mail->Username = "thebnbhub@outlook.com";
 //Password to use for SMTP authentication
 $mail->Password = "Pedro123";
 //Set who the message is to be sent from
-//$mail->setFrom('from@example.com', 'First Last');
+$mail->setFrom('thebnbhub@outlook.com', 'First Last');
 
 //Set who the message is to be sent to
 $mail->addAddress('iscott3007@gmail.com', 'John Doe');
