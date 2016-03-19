@@ -20,7 +20,7 @@ $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
 $mail->Username = "thebnbhub@outlook.com";
 //Password to use for SMTP authentication
-$mail->Password = "Pedro123";
+$mail->Password = "Pedro1234";
 //Set who the message is to be sent from
 $mail->setFrom('thebnbhub@outlook.com', 'First Last');
 
