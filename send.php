@@ -18,7 +18,7 @@ $mail->Port = 25;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = "thebnbhub@outlook.com";
+$mail->Username = "thebnbhub";
 //Password to use for SMTP authentication
 $mail->Password = "Pedro123";
 //Set who the message is to be sent from
