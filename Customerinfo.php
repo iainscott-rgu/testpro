@@ -276,6 +276,7 @@ catch(PDOException $e)
                         /**
                          * This example shows making an SMTP connection with authentication.
                          */
+                        echo "here is a message";
                         //SMTP needs accurate times, and the PHP time zone MUST be set
                         //This should be done in your php.ini, but this is how to do it if you don't have access to that
                         date_default_timezone_set('Etc/UTC');
@@ -298,7 +299,7 @@ catch(PDOException $e)
                         //Whether to use SMTP authentication
                         $mail->SMTPAuth = true;
                         //Username to use for SMTP authentication
-                        $mail->Username = "thebnbhub@outlook.com";
+                        $mail->Username = "thebnbhub";
                         //Password to use for SMTP authentication
                         $mail->Password = "Pedro123";
                         //Set who the message is to be sent from
