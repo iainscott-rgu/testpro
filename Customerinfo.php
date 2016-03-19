@@ -1,29 +1,14 @@
 <html>
-
-
 <body>
-
-
-<section class="spacer" id="spacer">
-
-
-</section>
-
-
 <section class="container" id="featured">
     <div class="centre">
-
         <p>You're almost there... please enter your details to complete your booking</p>
     </div>
 </section>
-
-
 <section class="container" id="content2">
 
     <form action="test.php" method="post">
-
         <table class="table6">
-
             <tr><td class="small"><p>* Required Fields</p></td></tr>
             <tr><td>
                     <label for="title">Title: *</label></td>
@@ -59,28 +44,5 @@
         </table></form>
 </section>
 
-<section class="spacer" id="spacer">
-
-</section>
-
-<section class="container" id="foot">
-
-    <div id="footernav">
-        <nav role="sub">
-            <ul>
-                <li><a href="SearchBB.php">Search</a></li>
-                <li><a href="OwnerSignIn.php">Member Area</a></li>
-                <li><a href="B&Bregistration.html">Register</a></li>
-                <li><a href="help.php#contactsection">Contact</a></li>
-                <li><a href="help.php#helpsection">Help</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div id="copyright">
-        <hr width="100%" size="1">
-        <p>Copyright. Team D Solutions.</p>
-    </div>
-
-</section>
 </body>
 </html>
