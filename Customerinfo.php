@@ -250,19 +250,19 @@ catch(PDOException $e)
                 </td>
                 <td>
                     <label for="email">Email: *</label></td>
-                <td><input type="text" id="email" class="inputform" name="email" placeholder="Enter your Email Address" size="20" maxlength="50" required /></td>
+                <td><input type="text" id="email" class="inputform" name="email" placeholder="Enter your Email Address" size="20" maxlength="50" /></td>
             </tr>
             <tr>
                 <td><label for="firstname">First Name: *</label></td>
-                <td><input type="text" id="firstname" class="inputform" name="firstname" placeholder="Enter your First Name" size="20" maxlength="25" required /></td>
+                <td><input type="text" id="firstname" class="inputform" name="firstname" placeholder="Enter your First Name" size="20" maxlength="25" /></td>
                 <td>
                     <label for="telephone">Telephone: *</label></td>
-                <td><input type="text" id="telephone" class="inputform" name="telephone" placeholder="Enter your telephone number" size="20" maxlength="20" required /></td>
+                <td><input type="text" id="telephone" class="inputform" name="telephone" placeholder="Enter your telephone number" size="20" maxlength="20"  /></td>
             </tr>
             </tr>
             <tr>
                 <td><label for="surname">Surname: *</label></td>
-                <td><input type="text" id="surname" class="inputform" name="surname" placeholder="Enter your Surname" size="20" maxlength="25" required /></td>
+                <td><input type="text" id="surname" class="inputform" name="surname" placeholder="Enter your Surname" size="20" maxlength="25" /></td>
             </tr>
             <tr>
                 <td colspan="4"><p align="right" ><input class="btn2" type="submit" value="Submit" class="submit" />
@@ -277,50 +277,41 @@ catch(PDOException $e)
                          * This example shows making an SMTP connection with authentication.
                          */
                         echo "here is a message";
-                        //SMTP needs accurate times, and the PHP time zone MUST be set
-                        //This should be done in your php.ini, but this is how to do it if you don't have access to that
-                        date_default_timezone_set('Etc/UTC');
-                        require 'PHPMailerAutoload.php';
-                        //Create a new PHPMailer instance
-                        $mail = new PHPMailer;
-                        //Tell PHPMailer to use SMTP
-                        $mail->isSMTP();
-                        //Enable SMTP debugging
-                        // 0 = off (for production use)
-                        // 1 = client messages
-                        // 2 = client and server messages
-                        $mail->SMTPDebug = 2;
-                        //Ask for HTML-friendly debug output
-                        $mail->Debugoutput = 'html';
-                        //Set the hostname of the mail server
-                        $mail->Host = "smtp.live.com";
-                        //Set the SMTP port number - likely to be 25, 465 or 587
-                        $mail->Port = 25;
-                        //Whether to use SMTP authentication
-                        $mail->SMTPAuth = true;
-                        //Username to use for SMTP authentication
-                        $mail->Username = "thebnbhub";
-                        //Password to use for SMTP authentication
-                        $mail->Password = "Pedro123";
-                        //Set who the message is to be sent from
-                        $mail->setFrom('thebnbhub@outlook.com', 'Team D');
-                        //Set an alternative reply-to address
-                        $mail->addReplyTo('thebnbhub@outlook.com', 'Team D');
-                        //Set who the message is to be sent to
-                        $mail->addAddress('iscott3007@gmail.com', 'Iain Scott');
-                        //Set the subject line
-                        $mail->Subject = 'PHPMailer SMTP test';
-                        //Read an HTML message body from an external file, convert referenced images to embedded,
-                        //convert HTML into a basic plain-text alternative body
-                        $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-                        //Replace the plain text body with one created manually
-                        $mail->AltBody = 'This is a plain-text message body';
-                        //send the message, check for errors
-                        if (!$mail->send()) {
-                            echo "Mailer Error: " . $mail->ErrorInfo;
-                        } else {
-                            echo "Message sent!";
-                        }
+
+
+/**
+ * This example shows how to make use of PHPMailer's exceptions for error handling.
+ */
+require 'PHPMailerAutoload.php';
+//Create a new PHPMailer instance
+//Passing true to the constructor enables the use of exceptions for error handling
+$mail = new PHPMailer(true);
+try {
+    //Set who the message is to be sent from
+    $mail->setFrom('from@example.com', 'First Last');
+    //Set an alternative reply-to address
+    $mail->addReplyTo('replyto@example.com', 'First Last');
+    //Set who the message is to be sent to
+    $mail->addAddress('whoto@example.com', 'John Doe');
+    //Set the subject line
+    $mail->Subject = 'PHPMailer Exceptions test';
+    //Read an HTML message body from an external file, convert referenced images to embedded,
+    //and convert the HTML into a basic plain-text alternative body
+    $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+    //Replace the plain text body with one created manually
+    $mail->AltBody = 'This is a plain-text message body';
+    //Attach an image file
+    $mail->addAttachment('images/phpmailer_mini.png');
+    //send the message
+    //Note that we don't need check the response from this because it will throw an exception if it has trouble
+    $mail->send();
+    echo "Message sent!";
+} catch (phpmailerException $e) {
+    echo $e->errorMessage(); //Pretty error messages from PHPMailer
+} catch (Exception $e) {
+    echo $e->getMessage(); //Boring error messages from anything else!
+}
+
  ?>
 
 
