@@ -12,13 +12,13 @@ $mail = new PHPMailer;
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
 //Set the hostname of the mail server
-$mail->Host = "mail.live.com";
+$mail->Host = "smtp.live.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
 $mail->Port = 25;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = "thebnbhub";
+$mail->Username = "thebnbhub@outlook.com";
 //Password to use for SMTP authentication
 $mail->Password = "Pedro123";
 //Set who the message is to be sent from
