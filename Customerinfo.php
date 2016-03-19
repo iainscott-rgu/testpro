@@ -20,7 +20,7 @@
 
 <section class="container" id="content2">
 
-    <form action=""test.php" method="post">
+    <form action="test.php" method="post">
 
         <table class="table6">
 
