@@ -26,7 +26,7 @@ if (!$mail->send()) {
 } else {
     echo "Welcome to the Booking Confirmation Page!!!<p>";
     echo "A confirmation email has been sent!<p>";
-    echo "<a href='customerinfo.php'>return to the homepage</a>";
+    echo "<a href='customerinfo.php'>Return to the Booking Page</a>";
 }
 
 ?>
