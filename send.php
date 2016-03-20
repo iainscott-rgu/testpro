@@ -19,7 +19,7 @@ $mail->addAddress('iscott3007@gmail.com');
 $mail->Subject = 'Booking Confirmation';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('contents.html'), dirname(contents.html));
+$mail->msgHTML(file_get_contents('contents.html'), dirname(testpro));
 //Replace the plain text body with one created manually
 $mail->Body = 'This is a plain-text message body';
 //Attach an image file
