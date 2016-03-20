@@ -11,9 +11,9 @@ $smtp = new SMTP;
 $smtp->do_debug = SMTP::DEBUG_CONNECTION;
 try {
 //Connect to an SMTP server
-    if ($smtp->connect('smtp.live.com', 25)) {
+    if ($smtp->connect('smtp-mail.live.com', 25)) {
         //Say hello
-        if ($smtp->hello('smtp.live.com')) { //Put your host name in here
+        if ($smtp->hello('smtp-mail.live.com')) { //Put your host name in here
             //Authenticate
             if ($smtp->authenticate('thebnbhub@outlook.com', 'Pedro123')) {
                 echo "Connected ok!";
