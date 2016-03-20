@@ -1,37 +1,8 @@
 <?php
 
 
-//$name = $_POST['name'];
-//$request = $_POST['request'];
-/*
-require 'PHPMailerAutoload.php';
-//Create a new SMTP instance
-$smtp = new SMTP;
-//Enable connection-level debug output
-$smtp->do_debug = SMTP::DEBUG_CONNECTION;
-try {
-//Connect to an SMTP server
-    if ($smtp->connect('smtp.gmail.com', 25)) {
-        //Say hello
-        if ($smtp->hello('smtp.gmail.com')) { //Put your host name in here
-            //Authenticate
-            if ($smtp->authenticate('thebnbhub@gmail.com', 'P3dro123')) {
-                echo "Connected ok!";
-            } else {
-                throw new Exception('Authentication failed: ' . $smtp->getLastReply());
-            }
-        } else {
-            throw new Exception('HELO failed: '. $smtp->getLastReply());
-        }
-    } else {
-        throw new Exception('Connect failed');
-    }
-} catch (Exception $e) {
-    echo 'SMTP error: '. $e->getMessage(), "\n";
-}
-//Whatever happened, close the connection.
-$smtp->quit(true);
-*/
+$name = $_POST['name'];
+$request = $_POST['request'];
 
 require 'PHPMailerAutoload.php';
 //Create a new PHPMailer instance
@@ -59,7 +30,7 @@ $mail->Subject = 'PHPMailer SMTP test';
 //convert HTML into a basic plain-text alternative body
 $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
-$mail->Body = 'This is a plain-text message body';
+$mail->Body = 'This is a plain-text message body /n/n $request';
 //Attach an image file
 $mail->addAttachment('images/phpmailer_mini.png');
 //send the message, check for errors
