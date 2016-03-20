@@ -24,9 +24,9 @@ $mail->Body = 'Name: '.$title.' '.$firstname.' '.$surname."\n".'Your Email: '.$e
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Welcome to the Booking Confirmation Page!!!";
-    echo "\n";
-    echo "A confirmation email has been sent to the address provided!";
+    echo "Welcome to the Booking Confirmation Page!!!".PHP_EOL;
+    echo "".PHP_EOL;
+    echo "A confirmation email has been sent to the address provided!".PHP_EOL;
 }
 
 ?>
