@@ -18,7 +18,7 @@ $mail->setFrom('thebnbhub@outlook.com');
 $mail->addAddress('iscott3007@gmail.com');
 $mail->Subject = 'Booking Confirmation';
 //$mail->msgHTML(file_get_contents('contents.html'), dirname(testpro));
-$mail->AltBody = 'First Name: $firstname \n Surname: $surname \n';
+$mail->Body = 'First Name: $firstname \n Surname: $surname \n';
 
 
 
