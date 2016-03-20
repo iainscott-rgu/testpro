@@ -15,7 +15,7 @@ try {
         //Say hello
         if ($smtp->hello('smtp.live.com')) { //Put your host name in here
             //Authenticate
-            if ($smtp->authenticate('thebnbhub', 'Pedro123')) {
+            if ($smtp->authenticate('thebnbhub@outlook.com', 'Pedro123')) {
                 echo "Connected ok!";
             } else {
                 throw new Exception('Authentication failed: ' . $smtp->getLastReply());
