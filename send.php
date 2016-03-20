@@ -18,7 +18,7 @@ $mail->setFrom('thebnbhub@outlook.com');
 $mail->addAddress($email);
 $mail->Subject = 'Booking Confirmation';
 //$mail->msgHTML(file_get_contents('contents.html'), dirname(testpro));
-$mail->Body = 'Name: '.$title.' '.$firstname.' '.$surname.' Your Email: '.$email.' Your telephone: '.$telephone;
+$mail->Body = 'Name: '.$title.' '.$firstname.' '.$surname."\n".'Your Email: '.$email."\n".'Your telephone: '.$telephone;
 //$mail->addAttachment('');
 
 if (!$mail->send()) {
