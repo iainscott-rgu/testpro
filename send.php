@@ -23,7 +23,7 @@ $mail->Password = "Pedro123";
 $mail->setFrom('thebnbhub@outlook.com', 'First Last');
 
 //Set who the message is to be sent to
-$mail->addAddress('$email', 'John Doe');
+$mail->addAddress('[$email]', 'John Doe');
 //Set the subject line
 $mail->Subject = 'PHPMailer SMTP test';
 //Read an HTML message body from an external file, convert referenced images to embedded,
