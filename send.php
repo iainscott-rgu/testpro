@@ -17,12 +17,17 @@ $mail->Password = "Pedro123";
 $mail->setFrom('thebnbhub@outlook.com');
 $mail->addAddress('iscott3007@gmail.com');
 $mail->Subject = 'Booking Confirmation';
-//Read an HTML message body from an external file, convert referenced images to embedded,
-//convert HTML into a basic plain-text alternative body
 $mail->msgHTML(file_get_contents('contents.html'), dirname(testpro));
-//Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message body';
-//$mail->addAttachment('images/phpmailer_mini.png');
+$mail->AltBody = 'First Name: $firstname \n Surname: $surname \n';
+
+echo <<<EOT
+My name is "$firstname". I am printing some $surname.
+Now, I am printing some {$foo->bar[1]}.
+This should print a capital 'A': \x41
+EOT;
+
+
+//$mail->addAttachment('');
 
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
