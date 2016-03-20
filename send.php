@@ -1,6 +1,5 @@
 <?php
 
-
 $name = $_POST['name'];
 $request = $_POST['request'];
 
@@ -30,7 +29,7 @@ $mail->Subject = 'PHPMailer SMTP test';
 //convert HTML into a basic plain-text alternative body
 $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
-$mail->Body = 'This is a plain-text message body /n/n $request';
+$mail->Body = 'This is a plain-text message body'.$request;
 //Attach an image file
 $mail->addAttachment('images/phpmailer_mini.png');
 //send the message, check for errors
@@ -39,16 +38,6 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
-
-
-//$to = "iscott3007@gmail.com";
-//$subject = "Test Email from theBnBhub";
-
-//$body = "This is an automated email from theBnBhub... you booking is confirmed /n/n $request";
-
-//mail($to,$subject,$body);
-
-//echo "message sent!";
 
 ?>
 
