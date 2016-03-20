@@ -3,7 +3,7 @@
 
 //$name = $_POST['name'];
 //$request = $_POST['request'];
-
+/*
 require 'PHPMailerAutoload.php';
 //Create a new SMTP instance
 $smtp = new SMTP;
@@ -31,8 +31,8 @@ try {
 }
 //Whatever happened, close the connection.
 $smtp->quit(true);
+*/
 
-/*
 require 'PHPMailerAutoload.php';
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
@@ -68,7 +68,7 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
-*/
+
 
 //$to = "iscott3007@gmail.com";
 //$subject = "Test Email from theBnBhub";
