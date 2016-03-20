@@ -25,6 +25,7 @@ if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
     echo "Welcome to the Booking Confirmation Page!!!";
+    echo "\n";
     echo "A confirmation email has been sent to the address provided!";
 }
 
