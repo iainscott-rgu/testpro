@@ -17,14 +17,9 @@ $mail->Password = "Pedro123";
 $mail->setFrom('thebnbhub@outlook.com');
 $mail->addAddress('iscott3007@gmail.com');
 $mail->Subject = 'Booking Confirmation';
-$mail->msgHTML(file_get_contents('contents.html'), dirname(testpro));
+//$mail->msgHTML(file_get_contents('contents.html'), dirname(testpro));
 $mail->AltBody = 'First Name: $firstname \n Surname: $surname \n';
 
-echo <<<EOT
-My name is "$firstname". I am printing some $surname.
-Now, I am printing some {$foo->bar[1]}.
-This should print a capital 'A': \x41
-EOT;
 
 
 //$mail->addAttachment('');
