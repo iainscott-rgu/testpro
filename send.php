@@ -24,7 +24,7 @@ $mail->Password = "Pedro123";
 //Set who the message is to be sent from
 $mail->setFrom('thebnbhub@outlook.com');
 //Set who the message is to be sent to
-$mail->addAddress('iscott@outlook.com'.$firstname.$surname);
+$mail->addAddress('iscott3007@outlook.com', ''.$firstname.$surname);
 //Set the subject line
 $mail->Subject = 'PHPMailer SMTP test';
 //Read an HTML message body from an external file, convert referenced images to embedded,
