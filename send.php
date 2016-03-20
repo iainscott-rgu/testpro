@@ -4,8 +4,35 @@
 //$name = $_POST['name'];
 //$request = $_POST['request'];
 
+require 'PHPMailerAutoload.php';
+//Create a new SMTP instance
+$smtp = new SMTP;
+//Enable connection-level debug output
+$smtp->do_debug = SMTP::DEBUG_CONNECTION;
+try {
+//Connect to an SMTP server
+    if ($smtp->connect('smtp.live.com', 25)) {
+        //Say hello
+        if ($smtp->hello('smtp.live.com')) { //Put your host name in here
+            //Authenticate
+            if ($smtp->authenticate('thebnbhub@outlook.com', 'Pedro123')) {
+                echo "Connected ok!";
+            } else {
+                throw new Exception('Authentication failed: ' . $smtp->getLastReply());
+            }
+        } else {
+            throw new Exception('HELO failed: '. $smtp->getLastReply());
+        }
+    } else {
+        throw new Exception('Connect failed');
+    }
+} catch (Exception $e) {
+    echo 'SMTP error: '. $e->getMessage(), "\n";
+}
+//Whatever happened, close the connection.
+$smtp->quit(true);
 
-
+/*
 require 'PHPMailerAutoload.php';
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
@@ -14,7 +41,7 @@ $mail->isSMTP();
 //Set the hostname of the mail server
 $mail->Host = "smtp.live.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 587;
+$mail->Port = 25;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
@@ -41,7 +68,7 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
-
+*/
 
 //$to = "iscott3007@gmail.com";
 //$subject = "Test Email from theBnBhub";
