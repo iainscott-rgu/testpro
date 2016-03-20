@@ -24,7 +24,7 @@ $mail->Body = 'Name: '.$title.' '.$firstname.' '.$surname."\n".'Your Email: '.$e
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
+    echo "Welcome to the Confirmation Page... \n A Message has been sent to the address provided!";
 }
 
 ?>
