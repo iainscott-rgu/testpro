@@ -26,7 +26,7 @@ if (!$mail->send()) {
 } else {
     echo "Welcome to the Booking Confirmation Page!!!".PHP_EOL;
     echo "".PHP_EOL;
-    echo "A confirmation email has been sent to the address provided!".PHP_EOL;
+    echo "A confirmation email has been sent!".PHP_EOL;
 }
 
 ?>
