@@ -30,7 +30,7 @@ $mail->Subject = 'PHPMailer SMTP test';
 //convert HTML into a basic plain-text alternative body
 $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
-$mail->Body = 'This is a plain-text message body $email';
+$mail->Body = 'This is a plain-text message body'. $email;
 //Attach an image file
 $mail->addAttachment('images/phpmailer_mini.png');
 //send the message, check for errors
